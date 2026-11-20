@@ -1,34 +1,36 @@
-# Temidire Oladayiye - Portfolio Website
+
+# Temidire Oladayiye — Portfolio Website
 
 ## CS 187 Website Assignment
 University of Massachusetts Boston
 Fall 2026
 
 ## Description
-This website is my personal academic and
-professional portfolio created for CS 187.
+This website is my academic and professional
+portfolio, developed for CS 187.
 
-It includes information about my education,
-work experience, STEM projects, leadership,
-technical skills, and professional interests.
+It includes my education, work experience,
+STEM projects, leadership activities,
+technical skills, resume, and contact information.
 
 ## Technologies Used
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
 ## Website Features
-- Dashboard-style navigation
-- Responsive layout
-- Education section
-- Work experience
-- STEM projects
+- Canvas-inspired dashboard layout
+- Responsive navigation sidebar
+- Education and work experience
+- STEM and technical projects
 - Leadership and involvement
 - Skills and qualifications
-- Contact information
+- Resume preview and download
+- UMass Boston logo
+- LinkedIn profile
 
-## Published Website
-PASTE YOUR GITHUB PAGES LINK HERE
+## Live Website
+https://hm6fp2mgsh-netizen.github.io/Website-UMass/
 
 ## Author
 Temidire Oladayiye

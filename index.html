@@ -1,0 +1,1218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temidire Oladayiye | Portfolio</title>
+<meta name="description" content="Academic and professional portfolio of Temidire Oladayiye, UMass Boston student.">
+
+<style>
+/* ===============================
+   CANVAS-INSPIRED DARK GRAY THEME
+================================ */
+
+:root {
+  --dark: #303236;
+  --slate: #55585e;
+  --gray: #777a80;
+  --background: #e8e8e9;
+  --surface: #f7f7f7;
+  --border: #c7c8cb;
+  --text: #292b2e;
+  --muted: #62656a;
+  --accent: #4b5745;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: #111;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+  width: 225px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--dark);
+  color: #f4f4f4;
+  padding: 24px 14px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #d8d8d8;
+  color: #292b2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar h2 {
+  font-size: 17px;
+  margin: 0 0 25px;
+  color: white;
+}
+
+.sidebar-label {
+  color: #b8b9bc;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 20px 12px 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: #e2e2e2;
+  padding: 12px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #55585e;
+  color: white;
+}
+
+.sidebar-footer {
+  font-size: 12px;
+  color: #b9b9b9;
+  margin-top: 30px;
+  padding: 12px;
+}
+
+/* ===============================
+   MAIN WEBSITE
+================================ */
+
+.main {
+  margin-left: 225px;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: #d4d5d7;
+  padding: 16px 35px;
+  border-bottom: 1px solid #b8b9bc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.topbar-badge {
+  background: #55585e;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+/* ===============================
+   HERO
+================================ */
+
+.hero {
+  padding: 65px 35px;
+  background:
+    radial-gradient(circle at 90% 10%,
+      rgba(255,255,255,0.09) 0 2px,
+      transparent 3px),
+    linear-gradient(135deg,#303236,#55585e);
+  background-size: 28px 28px, cover;
+  color: white;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #d2d2d2;
+}
+
+.hero h1 {
+  font-size: clamp(38px,6vw,68px);
+  margin: 14px 0;
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 750px;
+  color: #ededed;
+  font-size: 16px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.button {
+  display: inline-block;
+  background: #f2f2f2;
+  color: #292b2e;
+  border: 1px solid #bfc0c2;
+  padding: 11px 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.button:hover {
+  background: #d8d8d8;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+
+.section {
+  padding: 45px 35px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.section-description {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #c5c6c8;
+  margin: 0 35px;
+}
+
+/* ===============================
+   DASHBOARD CARDS
+================================ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid #bfc0c2;
+  border-radius: 11px;
+  overflow: hidden;
+  box-shadow: 0 3px 9px rgba(0,0,0,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+.card-cover {
+  height: 125px;
+  position: relative;
+  overflow: hidden;
+  background-color: #55585e;
+}
+
+/* Black-and-white pattern designs */
+
+.pattern-stars {
+  background:
+    radial-gradient(circle at 20% 25%,#eee 0 3px,transparent 4px),
+    radial-gradient(circle at 75% 40%,#bbb 0 5px,transparent 6px),
+    radial-gradient(circle at 45% 80%,#fff 0 2px,transparent 3px),
+    repeating-linear-gradient(
+      35deg,#303236 0 12px,#505258 12px 25px
+    );
+  background-size: 55px 55px,70px 70px,40px 40px,auto;
+}
+
+.pattern-grid {
+  background-color: #85878b;
+  background-image:
+    linear-gradient(45deg,
+      rgba(255,255,255,.22) 25%,transparent 25%),
+    linear-gradient(-45deg,
+      rgba(0,0,0,.12) 25%,transparent 25%);
+  background-size: 24px 24px;
+}
+
+.pattern-dots {
+  background-color: #52545a;
+  background-image:
+    radial-gradient(#dedede 2px,transparent 3px);
+  background-size: 18px 18px;
+}
+
+.pattern-lines {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #393b40 0 7px,
+      #696b70 7px 14px,
+      #d0d0d0 14px 15px
+    );
+}
+
+.pattern-waves {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 100%,
+      #4d5055 0 10px,
+      #898b90 11px 13px,
+      #36383d 14px 24px
+    );
+}
+
+.pattern-checker {
+  background-color: #595b60;
+  background-image:
+    linear-gradient(45deg,#999 25%,transparent 25%),
+    linear-gradient(-45deg,#999 25%,transparent 25%);
+  background-size: 30px 30px;
+}
+
+.card-body {
+  padding: 22px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #303236;
+}
+
+.card p,
+.card li {
+  font-size: 14px;
+  color: #515359;
+}
+
+.card ul {
+  padding-left: 19px;
+}
+
+.card-meta {
+  color: #65705e;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card.wide {
+  grid-column: span 2;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.tag {
+  padding: 5px 10px;
+  background: #e0e1e2;
+  color: #44464a;
+  border: 1px solid #c9cacc;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* ===============================
+   UNIVERSITY LOGO
+================================ */
+
+.school-logo {
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 0 15px;
+}
+
+/* ===============================
+   CONTACT
+================================ */
+
+.contact-box {
+  background: #393b40;
+  color: white;
+  border-radius: 11px;
+  padding: 30px;
+}
+
+.contact-box h2 {
+  margin-top: 0;
+}
+
+.contact-box p {
+  color: #e2e2e2;
+}
+
+.contact-box a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #d4d5d7;
+  color: #55585e;
+  font-size: 13px;
+}
+
+/* ===============================
+   MOBILE RESPONSIVENESS
+================================ */
+
+@media(max-width:1050px) {
+  .grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 10px;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 12px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .sidebar nav a {
+    padding: 8px 10px;
+  }
+
+  .sidebar-label,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .topbar {
+    padding: 15px 20px;
+  }
+
+  .hero {
+    padding: 50px 22px;
+  }
+
+  .section {
+    padding: 35px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.wide {
+    grid-column: span 1;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card {
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================
+     SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+  <div class="sidebar-logo">TO</div>
+
+  <h2>Temidire Oladayiye</h2>
+
+  <div class="sidebar-label">Portfolio</div>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">⌂ Dashboard</a>
+    <a href="#about">◈ About Me</a>
+    <a href="#education">▣ Education</a>
+    <a href="#experience">▤ Experience</a>
+    <a href="#projects">⌘ Projects</a>
+    <a href="#leadership">★ Leadership</a>
+    <a href="#skills">◆ Skills</a>
+    <a href="#contact">✉ Contact</a>
+  </nav>
+
+  <div class="sidebar-label">Professional</div>
+
+  <nav aria-label="Professional links">
+    <a
+      href="https://www.linkedin.com/in/temidire-oladayiye-02474338b/"
+      target="_blank"
+      rel="noopener noreferrer">
+      LinkedIn
+    </a>
+
+    <a href="Temidire_Oladayiye_Resume.pdf" download>
+      Download Résumé
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    UMass Boston<br>
+    Computer Science
+  </div>
+</aside>
+
+<!-- ==========================
+     MAIN CONTENT
+========================== -->
+
+<div class="main">
+
+  <div class="topbar">
+    <div class="topbar-title">My Dashboard</div>
+    <div class="topbar-badge">Student Portfolio</div>
+  </div>
+
+  <!-- HOMEPAGE -->
+  <header class="hero" id="home">
+    <div class="hero-inner">
+
+      <div class="hero-label">
+        Welcome to my portfolio
+      </div>
+
+      <h1>Temidire Oladayiye</h1>
+
+      <p>
+        University of Massachusetts Boston undergraduate
+        interested in Computer Science, STEM, technology, and community leadership.
+        I enjoy learning through hands-on projects,
+        exploring new technologies, and supporting
+        others through education and service.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="button" href="#projects">
+          View My Projects
+        </a>
+
+        <a
+          class="button"
+          href="Temidire_Oladayiye_Resume.pdf"
+          download>
+          Download Résumé
+        </a>
+
+        <a
+          class="button"
+          href="https://www.linkedin.com/in/temidire-oladayiye-02474338b/"
+          target="_blank"
+          rel="noopener noreferrer">
+          LinkedIn
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-description">
+      My academic interests, experiences, and goals.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-cover pattern-stars"></div>
+        <div class="card-body">
+          <h3>Technology & Innovation</h3>
+          <p>
+            I enjoy programming, web development,
+            robotics, engineering, and exploring
+            emerging technologies.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-grid"></div>
+        <div class="card-body">
+          <h3>Leadership & Service</h3>
+          <p>
+            I have experience supporting young people,
+            working with teams, and creating positive
+            environments through mentoring and service.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-dots"></div>
+        <div class="card-body">
+          <h3>Healthcare & Learning</h3>
+          <p>
+            I am interested in healthcare and medicine
+            while continuing to build skills in science,
+            technology, and critical thinking.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <p class="section-description">
+      My academic background and college-level learning.
+    </p>
+
+    <div class="grid">
+
+      <article class="card wide">
+        <div class="card-body">
+
+          <img
+            class="school-logo"
+            src="images/UMass-Boston-Official-Logo.svg"
+            alt="University of Massachusetts Boston official logo">
+
+          <h3>University of Massachusetts Boston</h3>
+
+          <div class="card-meta">
+            Undergraduate Studies • Current
+          </div>
+
+          <p>
+            Pursuing undergraduate studies with
+            interests in Computer Science
+          </p>
+
+          <p>
+            <strong>Campus Address:</strong><br>
+            100 Morrissey Boulevard<br>
+            Boston, MA 02125
+          </p>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-lines"></div>
+        <div class="card-body">
+
+          <h3>Roxbury Prep High School</h3>
+
+          <div class="card-meta">
+            Graduate • 2026
+          </div>
+
+          <p>
+            Completed Advanced Placement coursework
+            and developed foundations in research,
+            academic writing, critical analysis,
+            and collaboration.
+          </p>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-waves"></div>
+        <div class="card-body">
+
+          <h3>Roxbury Community College</h3>
+
+          <div class="card-meta">
+            Summer STEM Program • 2022–2025
+          </div>
+
+          <p>
+            College-credit STEM learning involving
+            programming, website development, robotics,
+            biotechnology, drones, and 3D printing.
+          </p>
+
+        </div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-body">
+
+          <h3>Dual Enrollment Programs</h3>
+
+          <div class="card-meta">
+            RCC & UMass Boston
+          </div>
+
+          <p>
+            Completed coursework in Engineering Fundamentals,
+            IT Problem Solving, Python/Replit,
+            project management, student activism,
+            interviewing, and individual rights.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Engineering</span>
+            <span class="tag">Python</span>
+            <span class="tag">Student Activism</span>
+            <span class="tag">College Credit</span>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+
+    <h2 class="section-title">Work Experience</h2>
+
+    <p class="section-description">
+      Employment, mentorship, and community service.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-cover pattern-stars"></div>
+        <div class="card-body">
+
+          <h3>Youth Leader</h3>
+          <div class="card-meta">
+            One Love Sports Academy • Summer 2026
+          </div>
+
+          <ul>
+            <li>Mentored youth participants.</li>
+            <li>Assisted classroom and gym activities.</li>
+            <li>Supported meals and daily programming.</li>
+            <li>Collaborated with staff.</li>
+            <li>Helped maintain a safe environment.</li>
+          </ul>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-grid"></div>
+        <div class="card-body">
+
+          <h3>Junior Counselor</h3>
+          <div class="card-meta">
+            The Salvation Army • Summer 2025
+          </div>
+
+          <ul>
+            <li>Supervised children during camp.</li>
+            <li>Assisted with recreational activities.</li>
+            <li>Supported daily programming.</li>
+            <li>Worked with counselors and staff.</li>
+            <li>Completed First Aid/CPR training.</li>
+          </ul>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-dots"></div>
+        <div class="card-body">
+
+          <h3>STEM Summer Program</h3>
+          <div class="card-meta">
+            Roxbury Community College • 2022–2025
+          </div>
+
+          <ul>
+            <li>Participated in college-level STEM learning.</li>
+            <li>Explored robotics and biotechnology.</li>
+            <li>Practiced website development and coding.</li>
+            <li>Worked on technical group projects.</li>
+          </ul>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-waves"></div>
+        <div class="card-body">
+
+          <h3>Childcare Provider</h3>
+          <div class="card-meta">
+            Ongoing Experience
+          </div>
+
+          <p>
+            Provided supervision and care for children,
+            supported daily routines, meals, and activities,
+            and developed responsibility, organization,
+            communication, and time-management skills.
+          </p>
+
+        </div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-body">
+
+          <h3>Volunteer Usher</h3>
+          <div class="card-meta">
+            Mountain of Fire and Miracles Ministry
+            • 2024–Present
+          </div>
+
+          <p>
+            Welcome and direct congregation members,
+            distribute materials, answer questions,
+            and assist with organizing services.
+          </p>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+
+    <h2 class="section-title">STEM & Technical Projects</h2>
+
+    <p class="section-description">
+      Technologies and project areas explored
+      through coursework and STEM programs.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-cover pattern-checker"></div>
+        <div class="card-body">
+
+          <h3>Website Development</h3>
+
+          <p>
+            Built websites using HTML, CSS,
+            and JavaScript, with experience in
+            responsive design and UX/UI concepts.
+          </p>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-stars"></div>
+        <div class="card-body">
+
+          <h3>Python Programming</h3>
+
+          <p>
+            Used Python and Replit in IT
+            problem-solving coursework
+            and collaborative coding activities.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Replit</span>
+            <span class="tag">Logic</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-lines"></div>
+        <div class="card-body">
+
+          <h3>Robotics & Microcontrollers</h3>
+
+          <p>
+            Designed robotic prototypes and
+            explored programming microcontrollers
+            through hands-on STEM activities.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Robotics</span>
+            <span class="tag">Engineering</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-waves"></div>
+        <div class="card-body">
+
+          <h3>3D Printing & Drone Technology</h3>
+
+          <p>
+            Explored 3D printing, drone operations,
+            and technical design through
+            STEM coursework and activities.
+          </p>
+
+          <div class="tags">
+            <span class="tag">3D Printing</span>
+            <span class="tag">Drones</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-dots"></div>
+        <div class="card-body">
+
+          <h3>Biotechnology Exploration</h3>
+
+          <p>
+            Participated in interdisciplinary
+            STEM learning involving biotechnology
+            and scientific exploration.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Biotechnology</span>
+            <span class="tag">Science</span>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-cover pattern-grid"></div>
+        <div class="card-body">
+
+          <h3>Future Projects</h3>
+
+          <p>
+            Interested in developing more
+            software, engineering, and technology
+            projects involving creativity
+            and practical problem-solving.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Innovation</span>
+            <span class="tag">Development</span>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- LEADERSHIP -->
+  <section class="section" id="leadership">
+
+    <h2 class="section-title">
+      Leadership & Involvement
+    </h2>
+
+    <p class="section-description">
+      Activities beyond the classroom.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-body">
+          <h3>Harvard Model Congress</h3>
+          <p>
+            Participated in public speaking,
+            leadership, debate, collaboration,
+            and civic engagement activities.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3>Young Physicians Initiative</h3>
+          <p>
+            Explored healthcare, medicine,
+            and professional development.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3>Student Activism — UMass Boston</h3>
+          <p>
+            Studied student activism, interviewing,
+            project management, immigration rights,
+            and individual rights.
+          </p>
+        </div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-body">
+          <h3>Academic Honors</h3>
+          <p>
+            Earned academic honors across multiple
+            high school quarters, including freshman,
+            sophomore, junior, and senior years.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+
+    <h2 class="section-title">Skills & Qualifications</h2>
+
+    <p class="section-description">
+      Technical and professional abilities.
+    </p>
+
+    <div class="card full">
+      <div class="card-body">
+
+        <h3>Programming & Technology</h3>
+
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">Replit</span>
+          <span class="tag">Microsoft Applications</span>
+          <span class="tag">Robotics</span>
+          <span class="tag">3D Printing</span>
+          <span class="tag">Drone Technology</span>
+          <span class="tag">Biotechnology</span>
+        </div>
+
+        <h3 style="margin-top:25px;">
+          Professional Skills
+        </h3>
+
+        <div class="tags">
+          <span class="tag">Communication</span>
+          <span class="tag">Leadership</span>
+          <span class="tag">Teamwork</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Project Management</span>
+          <span class="tag">Time Management</span>
+          <span class="tag">Adaptability</span>
+          <span class="tag">Customer Service</span>
+          <span class="tag">Youth Mentoring</span>
+          <span class="tag">Child Supervision</span>
+        </div>
+
+        <h3 style="margin-top:25px;">
+          Languages & Training
+        </h3>
+
+        <div class="tags">
+          <span class="tag">English</span>
+          <span class="tag">Yoruba</span>
+          <span class="tag">First Aid/CPR Training</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <p class="section-description">
+      Connect with me about internships,
+      STEM, technology, and community opportunities.
+    </p>
+
+    <div class="contact-box">
+
+      <h2>Let's Connect</h2>
+
+      <p>
+        <strong>Email:</strong><br>
+        <a href="mailto:oladayiyet@icloud.com">
+          oladayiyet@icloud.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Phone:</strong><br>
+        <a href="tel:+18572227732">
+          (857) 222-7732
+        </a>
+      </p>
+
+      <p>
+        <strong>Location:</strong><br>
+        Boston, Massachusetts
+      </p>
+
+      <p>
+        <strong>University:</strong><br>
+        University of Massachusetts Boston<br>
+        100 Morrissey Boulevard<br>
+        Boston, MA 02125
+      </p>
+
+      <p>
+        <strong>LinkedIn:</strong><br>
+        <a
+          href="https://www.linkedin.com/in/temidire-oladayiye-02474338b/"
+          target="_blank"
+          rel="noopener noreferrer">
+          View My LinkedIn Profile
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; <span id="year">2026</span>
+    Temidire Oladayiye | Student Portfolio
+  </footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// Highlight active sidebar link on click
+const navLinks = document.querySelectorAll(
+  ".sidebar nav a[href^='#']"
+);
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(item =>
+      item.classList.remove("active")
+    );
+    link.classList.add("active");
+  });
+});
+</script>
+
+</body>
+</html>
